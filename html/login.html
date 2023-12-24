@@ -12,7 +12,7 @@
 <div class="htmleaf-container">
     <div class="wrapper">
         <div class="container">
-            <h1>生日快乐！</h1>
+            <h1>生日快乐</h1>
             <h4>使用手机百度app，效果最佳</h4>
             <form class="form">
                 <h5>姓名是你的小名哦~</h5>
@@ -25,8 +25,51 @@
     </div>
 </div>
 
-<!--<script src="https://gitee.com/Jack___wu/lover/raw/master/js/jquery-2.1.1.min.js" type="text/javascript"></script>-->
-<script src="../js/jquery-1.8.4.min.js" type="text/javascript"></script>
+<script src="https://gitee.com/Jack___wu/lover/raw/master/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script>
+    $('#login-button').click(function (event) {
+        var userName = document.getElementById("userName").value;
+        var pwd = document.getElementById("pwd").value;
+        if (((userName === "荣荣" || userName === "付晓彤" || userName === "晓彤") && pwd === "2005/12/21") || (userName === "" && pwd === "pass")) {
+            event.preventDefault();
+            $('form').fadeOut(500);
+            $('.wrapper').addClass('form-success');
+            alert("请把手机横屏，再点击确定哦~~~")
+            requestFullScreen();
+            setTimeout(() => {
+                location.href = "index1.html";
+            }, 2000);
+        } else {
+            alert("姓名是你的小名哦~\n密码是你的生日哦!（如2000/01/01）");
+        }
+    });
+
+    function requestFullScreen() {
+        const element = document.documentElement;
+        const requestMethod = element.requestFullScreen || //W3C
+            element.webkitRequestFullScreen || //Chrome等
+            element.mozRequestFullScreen || //FireFox
+            element.msRequestFullScreen; //IE11
+        if (requestMethod) {
+            requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+            const wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+
+    function changeFrameHeight() {
+        const ifm = document.getElementById("iframepage");
+        ifm.height = document.documentElement.clientHeight;
+    }
+
+    window.onresize = function () {
+        changeFrameHeight();
+    }
+    changeFrameHeight();
+</script>
 
 </body>
 </html>
