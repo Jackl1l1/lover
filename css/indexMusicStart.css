@@ -9,6 +9,7 @@
 /*}*/
 
 .container {
+    font-family: "楷体","Microsoft YaHei", serif;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
