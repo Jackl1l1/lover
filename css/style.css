@@ -1143,10 +1143,10 @@
 
 /*文本*/
 .ly-txt13 {
-    font-family: Microsoft YaHei;
+    /*font-family: Microsoft YaHei;*/
     font-size: 1rem;
     /*text-shadow: 1rem;*/
-    font-color: #000;
+    /*font-color: #000;*/
     position: absolute;
     left: 3%;
     top: 4%;
