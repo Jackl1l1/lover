@@ -36,7 +36,16 @@
             $('.wrapper').addClass('form-success');
             alert("请把手机横屏，再点击确定哦~~~")
             requestFullScreen();
+
             setTimeout(() => {
+                let date = new Date();
+                if (date.getFullYear() >= 2023) {
+                    if (date.getMonth() + 1 === 12) {
+                        if (date.getDate() <= 29) {
+                            location.href = "html/MerryChristmas.html";
+                        }
+                    }
+                }
                 location.href = "index1.html";
             }, 2000);
         } else {
