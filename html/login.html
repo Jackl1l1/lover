@@ -12,7 +12,7 @@
 <div class="htmleaf-container">
     <div class="wrapper">
         <div class="container">
-            <h1>生日快乐</h1>
+            <h1>Hello !</h1>
             <h1 style="font-size: 20px">使用手机百度app，效果最佳</h1>
             <form class="form">
                 <h5>姓名是你的小名哦~</h5>
@@ -35,23 +35,26 @@
             $('form').fadeOut(500);
             $('.wrapper').addClass('form-success');
             alert("请把手机横屏，再点击确定哦~~~")
-            requestFullScreen();
 
-            setTimeout(() => {
-                let date = new Date();
-                if (date.getFullYear() >= 2023) {
-                    if (date.getMonth() + 1 === 12) {
-                        if (date.getDate() <= 29) {
-                            location.href = "html/MerryChristmas.html";
-                        }
-                    }
-                }
-                location.href = "index1.html";
-            }, 2000);
+            // requestFullScreen();
+            let date = new Date();
+            if (date.getMonth() + 1 === 12 && date.getDate() > 20 && date.getDate() < 30) {
+                location.href = "MerryChristmas.html";
+            }
+            if ((date.getMonth() + 1 === 12 && date.getDate() >= 30) ||
+                (date.getMonth() + 1 === 1 && date.getDate() < 5)) {
+                document.body.style.backgroundColor = "#f10019";
+                setTimeout(() => {
+                    location.href = "HappyNewYear.html";
+                }, 2000)
+            } else {
+                location.href = "index1.html"
+            }
         } else {
             alert("姓名是你的小名哦~\n密码是你的生日哦!（如2000/01/01）");
         }
-    });
+    })
+
 
     function requestFullScreen() {
         const element = document.documentElement;
