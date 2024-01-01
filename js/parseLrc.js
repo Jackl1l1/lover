@@ -1,4 +1,5 @@
 // console.log(lrc)
+
 const parseLrc = () => {
     let result = []
     const row = lrc.split('\n');
