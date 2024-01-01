@@ -1,4 +1,4 @@
-console.log(lrc)
+// console.log(lrc)
 
 
 const parseLrc = () => {
